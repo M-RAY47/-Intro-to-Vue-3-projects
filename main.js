@@ -11,7 +11,7 @@ const app = Vue.createApp({
 			details: ["80% cotton", "20% polyester", "Gender-neutral"],
 			variants: [
 				{
-					variantsId: 2234,
+					variantsId: 2233,
 					variantSize: "Small"
 				},
 				{
