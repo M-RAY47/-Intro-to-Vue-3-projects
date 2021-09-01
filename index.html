@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Vue Mastery</title>
     <!-- Import Styles -->
-    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@next"></script>
   </head>
@@ -20,6 +20,8 @@
           <div class="product-info">
             <h1>{{ product }}</h1>
             <p>{{ description }}</p>
+            <span v-if="onSale">On Sale!</span>
+            <span v-else>Sale Out!</span>
             <p>{{ link }}<a :href="url">{{ lesson }}</a></p>
           </div>
         </div>
