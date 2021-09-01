@@ -5,6 +5,7 @@ const app = Vue.createApp({
 			image: './assets/images/socks_green.jpg',
 			inStock: true,
 			details: ["80% cotton", "20% polyester", "Gender-neutral"],
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 			variants: [
 				{ id: 2234, color: "green", variantImage: "./assets/images/socks_green.jpg" },
 				{ id: 2235, color: "blue", variantImage: "./assets/images/socks_blue.jpg" }
@@ -24,8 +25,8 @@ const app = Vue.createApp({
       if (this.cart <= 0) {
         return cart;
       }else {
-      this.cart -=1;
-    }
+        this.cart -=1;
+      }
     }
 	}
 });
