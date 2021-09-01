@@ -7,7 +7,22 @@ const app = Vue.createApp({
 			url: 'https://www.vuemastery.com/courses/intro-to-vue-3/attribute-binding-vue3/',
 			lesson: "lesson 3",
 			link: "Here is the link to ",
-			onSale: true
+			onSale: true,
+			details: ["80% cotton", "20% polyester", "Gender-neutral"],
+			variants: [
+				{
+					variantsId: 2234,
+					variantSize: "Small"
+				},
+				{
+					variantsId: 2234,
+					variantSize: "Medium"
+				},
+				{
+					variantsId: 2235,
+					variantSize: "Large"
+				}
+			]
 		}
 	}
 });
