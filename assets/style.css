@@ -188,5 +188,5 @@ ul {
   flex-direction: column;
 }
 .in-line-p {
-  padding: 5px;
+  padding: 0 5px 0 5px;
 }

@@ -1,6 +1,7 @@
 const app = Vue.createApp({
 	data() {
 		return {
+      brand: 'Vue Mastery',
 			product: 'Socks',
 			image: './assets/images/socks_green.jpg',
 			inStock: true,
@@ -28,5 +29,10 @@ const app = Vue.createApp({
         this.cart -=1;
       }
     }
-	}
+	},
+  computed: {
+    title(){
+      return this.brand + " " + this.product
+    }
+  }
 });
