@@ -5,7 +5,6 @@ const app = Vue.createApp({
 			product: 'Socks',
 			selectedVariant: 0,
 			details: ["80% cotton", "20% polyester", "Gender-neutral"],
-			sizes: ['S', 'M', 'L', 'XL', 'XXL'],
 			variants: [
 				{ id: 2234, color: "green", image: "./assets/images/socks_green.jpg", quantity: 20},
 				{ id: 2235, color: "blue", image: "./assets/images/socks_blue.jpg", quantity: 0}
