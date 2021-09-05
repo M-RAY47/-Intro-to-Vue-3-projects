@@ -27,10 +27,6 @@
               <li v-for="detail in details">{{ detail }}</li>
             </ul>
 
-            <div class="in-line" v-for="size in sizes">
-              <p class="in-line-p">{{ size }}</p>
-            </div>
-
             <div v-for="(variant, index) in variants" 
             :key="variant.id"
             class="color-circle"
