@@ -1,4 +1,38 @@
-const app = Vue.createApp({
+Vue.component('product', {
+	template: `
+	
+	<div class="product-display">
+    <div class="product-container">
+      <div class="product-image">
+        <img :src="image">
+      </div>
+      <div class="product-info">
+        <h1>{{ title }}</h1>
+        <p v-if="onSale">On Sale</p>
+        <p v-else :style="{ 'text-decoration' : line-through }">Out of Stock</p>
+        <ul>
+          <li v-for="detail in details">{{ detail }}</li>
+        </ul>
+            
+        <div class="cart">Cart({{ cart }})</div>
+        <div v-for="(variant, index) in variants" 
+        :key="variant.id"
+        class="color-circle"
+        :style="{ backgroundColor: variant.color}"
+        @mouseover="updateVariant(index)">
+        </div>
+
+        <button class="button" 
+        v-on:click="addToCart"
+        :class="{ disabledButton: !onSale }"
+        :disabled="!onSale">Add to Cart</button>
+        <button class="button" v-on:click="removeCart"
+        :class="{ disabledButton: cart==0 }"
+        :disabled="Cart == 0">Remove from Cart</button>
+      </div>
+    </div>
+  </div>
+	`,
 	data() {
 		return {
 			brand: 'Vue Mastery',
@@ -11,7 +45,6 @@ const app = Vue.createApp({
 			],
 			cart: 0
 		}
-	
 	},
 	methods: {
 		addToCart() {
@@ -31,13 +64,18 @@ const app = Vue.createApp({
 	},
   computed: {
     title(){
-      return this.brand + " " + this.product
-    },
+		return this.brand + " " + this.product
+    	},
 	image() {
 		return this.variants[this.selectedVariant].image
-	},
+		},
 	onSale() {
 		return this.variants[this.selectedVariant].quantity
+		}
 	}
-  }
+})
+
+
+const app = Vue.createApp({
+	el: '#app'
 });
