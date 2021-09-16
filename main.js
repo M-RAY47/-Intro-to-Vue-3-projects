@@ -1,6 +1,19 @@
-Vue.component('product', {
-	template: `
-	
+
+const app = Vue.createApp({
+	el: '#app'
+});
+
+app.component('sock', {
+  template: `<h1>Hello from component</h1>`,
+  data(){
+    return "Hello Component"
+  }
+})
+app.component('product', {
+	template:  /*html*/ 
+  `
+
+  <div class="cart">Cart({{ cart }})</div>
 	<div class="product-display">
     <div class="product-container">
       <div class="product-image">
@@ -14,7 +27,6 @@ Vue.component('product', {
           <li v-for="detail in details">{{ detail }}</li>
         </ul>
             
-        <div class="cart">Cart({{ cart }})</div>
         <div v-for="(variant, index) in variants" 
         :key="variant.id"
         class="color-circle"
@@ -76,6 +88,3 @@ Vue.component('product', {
 })
 
 
-const app = Vue.createApp({
-	el: '#app'
-});
