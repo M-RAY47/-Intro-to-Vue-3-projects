@@ -1,19 +1,27 @@
 
 const app = Vue.createApp({
-	el: '#app'
+	el: '#app',
+  data() {
+    premium: true
+  }
 });
 
 app.component('sock', {
-  template: `<h1>Hello from component</h1>`,
+  template: `<h1>Hello from sock component</h1>`,
   data(){
     return "Hello Component"
   }
 })
 app.component('product', {
+  props: {
+    premium: {
+      type: Boolean,
+      required: true,
+    }
+  },
 	template:  /*html*/ 
   `
 
-  <div class="cart">Cart({{ cart }})</div>
 	<div class="product-display">
     <div class="product-container">
       <div class="product-image">
@@ -23,6 +31,7 @@ app.component('product', {
         <h1>{{ title }}</h1>
         <p v-if="onSale">On Sale</p>
         <p v-else :style="{ 'text-decoration' : line-through }">Out of Stock</p>
+        <p>Shipping: {{ shipping }}</p>
         <ul>
           <li v-for="detail in details">{{ detail }}</li>
         </ul>
