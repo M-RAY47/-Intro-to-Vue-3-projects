@@ -9,9 +9,10 @@
     <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
+    <div class="nav-bar"></div>
     <div id="app">
-      <div class="nav-bar"></div>
-      <product></product>
+      <div class="cart"><p>Cart({{ cart }})</p></div>
+      <product :premium="premium"></product>
       <sock></sock>
     </div>
 
