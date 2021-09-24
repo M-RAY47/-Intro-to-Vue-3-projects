@@ -1,8 +1,11 @@
 
 const app = Vue.createApp({
-	el: '#app',
+  el: '#app',
   data() {
-    premium: true
+    return {
+      premium: true,
+      cart: 0
+    }
   }
 });
 
@@ -16,7 +19,7 @@ app.component('product', {
   props: {
     premium: {
       type: Boolean,
-      required: true,
+      required: false,
     }
   },
 	template:  /*html*/ 
@@ -64,7 +67,6 @@ app.component('product', {
 				{ id: 2234, color: "green", image: "./assets/images/socks_green.jpg", quantity: 20},
 				{ id: 2235, color: "blue", image: "./assets/images/socks_blue.jpg", quantity: 0}
 			],
-			cart: 0
 		}
 	},
 	methods: {
@@ -85,14 +87,19 @@ app.component('product', {
 	},
   computed: {
     title(){
-		return this.brand + " " + this.product
-    	},
-	image() {
-		return this.variants[this.selectedVariant].image
-		},
-	onSale() {
-		return this.variants[this.selectedVariant].quantity
-		}
+		  return this.brand + " " + this.product
+  	},
+    image() {
+	    return this.variants[this.selectedVariant].image
+	  },
+    onSale() {
+    	return this.variants[this.selectedVariant].quantity
+  	},
+    shipping() {
+      if  (this.premium){
+        return "Free"
+      }
+    }
 	}
 })
 
