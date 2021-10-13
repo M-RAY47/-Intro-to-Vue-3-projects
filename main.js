@@ -15,6 +15,7 @@ app.component('sock', {
     return "Hello Component"
   }
 })
+
 app.component('product', {
   props: {
     premium: {
@@ -24,7 +25,6 @@ app.component('product', {
   },
 	template:  /*html*/ 
   `
-
 	<div class="product-display">
     <div class="product-container">
       <div class="product-image">
@@ -99,6 +99,7 @@ app.component('product', {
       if  (this.premium){
         return "Free"
       }
+      return 2.99
     }
 	}
 })
