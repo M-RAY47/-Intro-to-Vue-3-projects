@@ -46,14 +46,15 @@ app.component('product', {
         :style="{ backgroundColor: variant.color}"
         @mouseover="updateVariant(index)">
         </div>
-
-        <button class="button" 
-        v-on:click="addToCart"
-        :class="{ disabledButton: !onSale }"
-        :disabled="!onSale">Add to Cart</button>
-        <button class="button" v-on:click="removeCart"
-        :class="{ disabledButton: cart==0 }"
-        :disabled="Cart == 0">Remove from Cart</button>
+        <div class="btn-group">
+          <button class="button" 
+          v-on:click="addToCart"
+          :class="{ disabledButton: !onSale }"
+          :disabled="!onSale">Add to Cart</button>
+          <button class="button" v-on:click="removeCart"
+          :class="{ disabledButton: cart==0 }"
+          :disabled="Cart == 0">Remove from Cart</button>
+        </div>
       </div>
     </div>
   </div>
@@ -98,11 +99,19 @@ app.component('product', {
     	return this.variants[this.selectedVariant].quantity
   	},
     shipping() {
-      if  (this.premium){
+      if (this.premium){
         return "Free"
       }
       return 2.99
     }
 	}
+})
+
+// Creating details component
+app.component('details', {
+  template:`
+  /*html*/
+
+  `
 })
 
