@@ -10,7 +10,7 @@ const app = Vue.createApp({
 });
 
 app.component('sock', {
-  template: `<h1>Hello from sock component</h1>`,
+  template: `<h1>Hello from sock component!!!</h1>`,
   data(){
     return "Hello Component"
   }
@@ -66,7 +66,7 @@ app.component('product', {
 			variants: [
 				{ id: 2234, color: "green", image: "./assets/images/socks_green.jpg", quantity: 20},
 				{ id: 2235, color: "blue", image: "./assets/images/socks_blue.jpg", quantity: 0}
-			],
+			]
 		}
 	},
 	methods: {
