@@ -10,7 +10,7 @@ const app = Vue.createApp({
 });
 
 app.component('sock', {
-  template: `<h1>Hello from sock component</h1>`,
+  template: `<h1>Hello from sock component!!!</h1>`,
   data(){
     return "Hello Component"
   }
@@ -25,6 +25,7 @@ app.component('product', {
   },
 	template:  /*html*/ 
   `
+  <div class="cart"><p>Cart({{ cart }})</p></div>
 	<div class="product-display">
     <div class="product-container">
       <div class="product-image">
@@ -45,14 +46,15 @@ app.component('product', {
         :style="{ backgroundColor: variant.color}"
         @mouseover="updateVariant(index)">
         </div>
-
-        <button class="button" 
-        v-on:click="addToCart"
-        :class="{ disabledButton: !onSale }"
-        :disabled="!onSale">Add to Cart</button>
-        <button class="button" v-on:click="removeCart"
-        :class="{ disabledButton: cart==0 }"
-        :disabled="Cart == 0">Remove from Cart</button>
+        <div class="btn-group">
+          <button class="button" 
+          v-on:click="addToCart"
+          :class="{ disabledButton: !onSale }"
+          :disabled="!onSale">Add to Cart</button>
+          <button class="button" v-on:click="removeCart"
+          :class="{ disabledButton: cart==0 }"
+          :disabled="Cart == 0">Remove from Cart</button>
+        </div>
       </div>
     </div>
   </div>
@@ -67,6 +69,7 @@ app.component('product', {
 				{ id: 2234, color: "green", image: "./assets/images/socks_green.jpg", quantity: 20},
 				{ id: 2235, color: "blue", image: "./assets/images/socks_blue.jpg", quantity: 0}
 			],
+      cart: 0
 		}
 	},
 	methods: {
@@ -96,11 +99,19 @@ app.component('product', {
     	return this.variants[this.selectedVariant].quantity
   	},
     shipping() {
-      if  (this.premium){
+      if (this.premium){
         return "Free"
       }
       return 2.99
     }
 	}
+})
+
+// Creating details component
+app.component('details', {
+  template:`
+  /*html*/
+
+  `
 })
 
