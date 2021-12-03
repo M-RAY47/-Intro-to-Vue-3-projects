@@ -7,7 +7,7 @@ app.component('product', {
   },
 	template:  /*html*/ 
   `
-  <div class="cart"><p>Cart({{ cart }})</p></div>
+
 	<div class="product-display">
     <div class="product-container">
       <div class="product-image">
@@ -35,7 +35,7 @@ app.component('product', {
           :disabled="!onSale">Add to Cart</button>
           <button class="button" v-on:click="removeCart"
           :class="{ disabledButton: cart==0 }"
-          :disabled="Cart == 0">Remove from Cart</button>
+          :disabled="cart == 0">Remove from Cart</button>
         </div>
       </div>
     </div>
