@@ -11,13 +11,16 @@
   <body>
     <div class="nav-bar"></div>
     <div id="app">
-      <product :premium="premium"></product>
+      <div class="cart" ><p>Cart({{ cart.length }})</p></div>
+      <product :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeCartUpdate"></product>
       <sock></sock>
      
     </div>
 
     <!-- Import app -->
     <script src="./main.js"></script>
+    <!-- Importing Product display component -->
+    <script src="./components/productDisplay.js"></script>
     <!-- Mount app-->
     <script>
       const mountedApp = app.mount('#app')
