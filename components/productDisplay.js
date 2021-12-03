@@ -50,20 +50,19 @@ app.component('product', {
 			variants: [
 				{ id: 2234, color: "green", image: "./assets/images/socks_green.jpg", quantity: 20},
 				{ id: 2235, color: "blue", image: "./assets/images/socks_blue.jpg", quantity: 0}
-			],
-      cart: 0
+			]
 		}
 	},
 	methods: {
 		addToCart() {
-			this.$emit('add-to-cart');
+			this.$emit('add-to-cart', this.variants[this.selectedVariant].id);
 		},
     updateVariant(index) {
       this.selectedVariant = index;
 	  console.log(index)
     },
     removeCart() {
-      this.$emit('remove-from-cart');
+      this.$emit('remove-from-cart', this.variants[this.selectedVariant].id);
     }
 	},
   computed: {
