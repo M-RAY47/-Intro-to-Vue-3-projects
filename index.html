@@ -12,7 +12,7 @@
     <div class="nav-bar"></div>
     <div id="app">
       <div class="cart" :cart="cart"><p>Cart({{ cart }})</p></div>
-      <product :premium="premium" @></product>
+      <product :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeCartUpdate"></product>
       <sock></sock>
      
     </div>

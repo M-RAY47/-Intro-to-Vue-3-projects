@@ -56,18 +56,14 @@ app.component('product', {
 	},
 	methods: {
 		addToCart() {
-			this.cart +=1;
+			this.$emit('add-to-cart');
 		},
     updateVariant(index) {
       this.selectedVariant = index;
 	  console.log(index)
     },
     removeCart() {
-      if (this.cart <= 0) {
-        return cart;
-      }else {
-        this.cart -=1;
-      }
+      this.$emit('remove-from-cart');
     }
 	},
   computed: {
