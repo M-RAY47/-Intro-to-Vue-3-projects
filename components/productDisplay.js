@@ -62,7 +62,7 @@ app.component('product', {
 	  console.log(index)
     },
     removeCart() {
-      this.$emit('remove-from-cart', this.variants[this.selectedVariant].id);
+      this.$emit('remove-cart', this.variants[this.selectedVariant].id);
     }
 	},
   computed: {
