@@ -1,9 +1,9 @@
 app.component('product-review', {
-	templete:
+	template:
 	/*html*/ `
 		<form class="review-form">
 			<p>
-				<label for=""name">Name:</label>
+				<label for="name">Name:</label>
 				<input id="name" v-model="name" type="text"/>
 			</p>
 			<p>

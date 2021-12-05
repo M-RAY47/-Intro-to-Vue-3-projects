@@ -22,6 +22,8 @@ const app = Vue.createApp({
 app.component('sock', {
   template: `<h1>Hello from sock component!!!</h1>`,
   data(){
-    return "Hello Component"
+    return {
+      hello:"Hello Component"
+    }
   }
 })
