@@ -25,14 +25,3 @@ app.component('sock', {
     return "Hello Component"
   }
 })
-
-
-
-// Creating details component
-app.component('details', {
-  template:`
-  /*html*/
-
-  `
-})
-
