@@ -12,8 +12,9 @@
     <div class="nav-bar"></div>
     <div id="app">
       <div class="cart" ><p>Cart({{ cart.length }})</p></div>
-      <product :premium="premium" @add-to-cart="updateCart" @remove-from-cart="removeCartUpdate"></product>
+      <product :premium="premium" @add-to-cart="updateCart" @remove-cart="removeCartUpdate"></product>
       <sock></sock>
+      <product-review></product-review>
      
     </div>
 
@@ -21,6 +22,8 @@
     <script src="./main.js"></script>
     <!-- Importing Product display component -->
     <script src="./components/productDisplay.js"></script>
+    <!-- Importing product review component-->
+    <script src="./components/ProductReview.js"></script>
     <!-- Mount app-->
     <script>
       const mountedApp = app.mount('#app')
