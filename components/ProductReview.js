@@ -21,7 +21,7 @@ app.component('product-review', {
 				</select>		
 			</p>
 			<p>
-				<input type="submit" value="submit" id="submit" name="submit">
+				<input type="submit" value="Submit" id="submit" name="submit">
 			</p>
 		</form>
 		
@@ -29,7 +29,8 @@ app.component('product-review', {
 	data() {
 		return {
 			name: null,
-			review: null
+			review: null,
+			rating: null
 		}
 	}
 })
