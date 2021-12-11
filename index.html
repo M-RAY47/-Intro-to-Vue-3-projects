@@ -14,7 +14,7 @@
       <div class="cart" ><p>Cart({{ cart.length }})</p></div>
       <product :premium="premium" @add-to-cart="updateCart" @remove-cart="removeCartUpdate"></product>
       <sock></sock>
-      <product-review></product-review>
+      <product-review @review-submit="addReview"></product-review>
      
     </div>
 

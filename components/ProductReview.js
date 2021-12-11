@@ -35,7 +35,15 @@ app.component('product-review', {
 	},
 	methods: {
 		onSubmit(){
-			
+			let productReview = {
+				name: this.name,
+				review: this.review,
+				rating: this.rating
+			},
+			this.$emit('review-submitted', productReview)
+			this.name= null,
+			this.review= null,
+			this.rating= null
 		}
 	}
 })
