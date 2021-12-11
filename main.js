@@ -13,7 +13,7 @@ const app = Vue.createApp({
     },
     removeCartUpdate(id) {
       if(this.cart.length != 0){
-        this.cart.shift(id);
+        this.cart.pop(id);
       }
     }
   }
