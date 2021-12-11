@@ -37,6 +37,17 @@ app.component('product', {
           :class="{ disabledButton: cart==0 }"
           :disabled="cart == 0">Remove from Cart</button>
         </div>
+        <div>
+          <h2>Reviews</h2>
+          <p v-if=!reviews.length>There is no review yet</p>
+          <ul>
+            <li v-for='review in reviews'>
+              <p>{{ review.name }}</p>
+              <p>{{ review.review }}</p>
+              <p>{{ review.ranking }}</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -50,7 +61,8 @@ app.component('product', {
 			variants: [
 				{ id: 2234, color: "green", image: "./assets/images/socks_green.jpg", quantity: 20},
 				{ id: 2235, color: "blue", image: "./assets/images/socks_blue.jpg", quantity: 0}
-			]
+			],
+      reviews: []
 		}
 	},
 	methods: {
@@ -63,6 +75,9 @@ app.component('product', {
     },
     removeCart() {
       this.$emit('remove-cart', this.variants[this.selectedVariant].id);
+    },
+    addReview(productReview){
+      this.reviews.push(productReview);
     }
 	},
   computed: {
