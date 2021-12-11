@@ -44,7 +44,7 @@ app.component('product', {
             <li v-for='review in reviews'>
               <p>{{ review.name }}</p>
               <p>{{ review.review }}</p>
-              <p>{{ review.ranking }}</p>
+              <p>{{ review.rating }}</p>
             </li>
           </ul>
         </div>
