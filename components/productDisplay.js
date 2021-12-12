@@ -1,7 +1,9 @@
-import ProductReview from './ProductReview.js'
+import productReview from './ProductReview.js'
 
 export default {
-  components:{ProductReview}
+  components:{
+    'product-review': productReview
+  }
 }
 
 app.component('product', {
