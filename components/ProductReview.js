@@ -48,3 +48,9 @@ var productReciew= {
 		}
 	}
 }
+
+export default {
+	components: {
+		name: 'ProductReview',
+	}
+}
