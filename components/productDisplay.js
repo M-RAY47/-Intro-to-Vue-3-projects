@@ -1,3 +1,11 @@
+import productReview from './ProductReview.js'
+
+export default {
+  components:{
+    'product-review': productReview
+  }
+}
+
 app.component('product', {
   props: {
     premium: {
@@ -37,6 +45,7 @@ app.component('product', {
           :class="{ disabledButton: cart==0 }"
           :disabled="cart == 0">Remove from Cart</button>
         </div>
+        <product-review></product-review>
         <div>
           <h2>Reviews</h2>
           <p v-if=!reviews.length>There is no review yet</p>
